@@ -24,6 +24,8 @@ runs:
       shell: bash
     - id: lint
       run: |
+        echo ${{ inputs.directory }}
+        echo "${{ inputs.directory }}"
         cd "${GITHUB_WORKSPACE}"
         if [ -z ${{ inputs.config }} ]; then
           export CONFIG=""
