@@ -34,6 +34,8 @@ runs:
         fi
         ./kube-linter $CONFIG lint ${{ inputs.directory }} 2>&1 | tee kubelinter.log
         result_code=${PIPESTATUS[0]}
+        ls
+        cat kubelinter.log
         echo "::set-output name=lint-txt::$(cat kubelinter.log)"
         exit $result_code
       shell: bash
